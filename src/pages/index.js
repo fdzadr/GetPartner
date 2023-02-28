@@ -19,7 +19,7 @@ export default function Home() {
         <div class="position-absolute top-50 start-50 translate-middle">
             <div className={styles.logo}>
                 <Image 
-                src="/Getjob 1.png" 
+                src="/Getjob.png" 
                 alt="logo1"
                 width={150}
                 height={50}
