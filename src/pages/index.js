@@ -15,34 +15,33 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <div class=" box position-relative" className={styles.box}>
-        <div class="position-absolute top-50 start-50 translate-middle">
+      <div class="box position-relative" className={styles.box}>
+        <div className="position-absolute top-50 start-50 translate-middle">
             <div className={styles.logo}>
-                <Image 
-                src='/Getjob.png' 
-                alt="logo1"
-                width={150}
-                height={50}
-                />
+              <Image 
+              src='/getjob.svg' 
+              width={150} 
+              height={50} 
+              />
             </div>
         
             <div className={styles.login_main}>
-                <div class="login__field">
-                    <i class="login__icon fas fa-user"></i>
+                <div className="login__field">
+                    <i className="login__icon fas fa-user"></i>
                     <input type="text" className={styles.login__input} placeholder="Phone Number"/>
                 </div>
         
-                <div class="login__field">
-                    <i class="login__icon fas fa-lock"></i>
+                <div className="login__field">
+                    <i className="login__icon fas fa-lock"></i>
                     <input type="password" className={styles.login__input} placeholder="Password"/>
                 </div>
 
-                <div class="login__field">
-                    <i class="login__icon fas fa-lock"></i>
+                <div className="login__field">
+                    <i className="login__icon fas fa-lock"></i>
                     <input type="password" className={styles.login__input} placeholder="Confirm Password"/>
                 </div>
         
-                <div class="buttons">
+                <div className="buttons">
                     <a href="/AfterLog/index2.html"><button className={styles.register__btn}>Register</button></a>
                 </div>
         
