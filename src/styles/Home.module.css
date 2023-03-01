@@ -78,4 +78,8 @@ outline: none;
 .box {
     margin-top: 110%;
   }
+
+  .register_btn {
+    width: 100px;
+  }
 }

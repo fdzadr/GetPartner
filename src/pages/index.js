@@ -19,7 +19,7 @@ export default function Home() {
         <div class="position-absolute top-50 start-50 translate-middle">
             <div className={styles.logo}>
                 <Image 
-                src="/Getjob.png" 
+                src='/Getjob.png' 
                 alt="logo1"
                 width={150}
                 height={50}
@@ -47,7 +47,7 @@ export default function Home() {
                 </div>
         
                 <div className={styles.regisask}>
-                    Sudah punya akun? <a href="register.html" class="goregister"> Login</a>
+                    Sudah punya akun? <a href="register.html" className="goregister"> Login</a>
                 </div>
                 
             </div>

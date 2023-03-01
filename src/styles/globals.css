@@ -1,3 +1,27 @@
 body {
   background-color: #2B4535;
 }
+
+@media screen and (min-width: 390px) and (max-width: 480px) {
+  .box {
+      margin-top: 100%;
+    }
+}
+  
+  /* Iphone SE */
+@media screen and (min-width: 290px) and (max-width: 380px) {
+  .box {
+      margin-top: 90%;
+    } 
+}
+  
+  /* Galaxy Fold */
+@media screen and (min-width: 280px) and (max-width: 285px) {
+  .box {
+      margin-top: 110%;
+    }
+  
+    .register_btn {
+      width: 100px;
+    }
+}
