@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Signin.module.css';
 import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Daftar() {
   return (
     <>
       <Head>
@@ -26,23 +26,28 @@ export default function Home() {
               />
             </div>
         
-            <div className={styles.login_main}>
+            <div className={styles.signin_main}>
                 <div className="login__field">
                     <i className="login__icon fas fa-user"></i>
-                    <input type="text" className={styles.login_input} placeholder="Phone Number"/>
+                    <input type="text" className={styles.signin_input} placeholder="Phone Number"/>
+                </div>
+
+                <div className="login__field">
+                    <i className="login__icon fas fa-user"></i>
+                    <input type="text" className={styles.signin_input} placeholder="Password"/>
                 </div>
         
                 <div className="login__field">
                     <i className="login__icon fas fa-lock"></i>
-                    <input type="password" className={styles.login_input} placeholder="Password"/>
+                    <input type="password" className={styles.signin_input} placeholder="Confirm Password"/>
                 </div>
         
                 <div className="buttons">
-                    <Link href="#"><button className={styles.login_btn}>Masuk</button></Link>
+                    <Link href="#"><button className={styles.signin_btn}>Daftar</button></Link>
                 </div>
         
-                <div className={styles.regisask}>
-                    Belum punya akun? <Link href="/daftar" className="goregister">Daftar</Link>
+                <div className={styles.loginask}>
+                    Sudah punya akun? <Link href="/index" className="gologin">Masuk</Link>
                 </div>
                 
             </div>
