@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,12 +15,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-      <div class="box position-relative" className={styles.box}>
+
+      <div class="box position-relative" className="box">
         <div className="position-absolute top-50 start-50 translate-middle">
             <div className={styles.logo}>
               <Image 
-              src='/getjob.svg' 
+              src='/aset/login aset/Getjob.svg' 
               width={150} 
               height={50} 
               />
@@ -28,31 +29,25 @@ export default function Home() {
             <div className={styles.login_main}>
                 <div className="login__field">
                     <i className="login__icon fas fa-user"></i>
-                    <input type="text" className={styles.login__input} placeholder="Phone Number"/>
+                    <input type="text" className={styles.login_input} placeholder="Phone Number"/>
                 </div>
         
                 <div className="login__field">
                     <i className="login__icon fas fa-lock"></i>
-                    <input type="password" className={styles.login__input} placeholder="Password"/>
-                </div>
-
-                <div className="login__field">
-                    <i className="login__icon fas fa-lock"></i>
-                    <input type="password" className={styles.login__input} placeholder="Confirm Password"/>
+                    <input type="password" className={styles.login_input} placeholder="Password"/>
                 </div>
         
                 <div className="buttons">
-                    <a href="/AfterLog/index2.html"><button className={styles.register__btn}>Register</button></a>
+                    <Link href="#"><button className={styles.login_btn}>Masuk</button></Link>
                 </div>
         
                 <div className={styles.regisask}>
-                    Sudah punya akun? <a href="register.html" className="goregister"> Login</a>
+                    Belum punya akun? <a href="/merchant/profile-setup.js" className="goregister">Daftar</a>
                 </div>
                 
             </div>
         </div>
       </div>
-      </main>
     </>
   )
 }

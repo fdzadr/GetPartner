@@ -7,55 +7,55 @@
   margin-top: 10%;
 }
 
-.login__input {
+.login_input {
   border: none;
-  background: #8A9A93;
+  background: var(--abu-bg);
   margin: 0 0 10px 0;
   padding: 10px;
   width: 250px;
   border-radius: 3px;
-  color: #D9D9D9;
+  color: var(--ijo-3);
   font-size: 12px;
   box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
-.login__input::placeholder {
-  color: #D9D9D9;
+.login_input::placeholder {
+  color: var(--ijo-3);
   opacity: 1;
 }
 
-.login__input::-ms-input-placeholder {
-  color: #D9D9D9;
+.login_input::-ms-input-placeholder {
+  color: var(--ijo-3);
 }
 
-.login__input:-ms-input-placeholder {
-  color: #D9D9D9;
+.login_input:-ms-input-placeholder {
+  color: var(--ijo-3);
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+.login_input:active,
+.login_input:focus,
+.login_input:hover {
 outline: none;
 }
 
-.register__btn {
+.login_btn {
   border: none;
-  background: #8A9A93;
+  background: var(--abu-bg);
   margin: 15px 0 0 0;
   padding: 10px;
   width: 150px;
   border-radius: 30px;
-  color: #D9D9D9;
+  color: var(--ijo-3);
   font-size: 12px;
   box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3); 
 }
 
 .regisask {
   margin: 15px 0 0 0;
-  color: #D9D9D9;
+  color: var(--ijo-gelap-1);
 }
 
 .regisask a {
   text-decoration: none;
-  color: #D9D9D9;
+  color: var(--ijo-3);
 }

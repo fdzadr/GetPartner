@@ -1,5 +1,17 @@
+:root {
+  --ijo-gelap-1: #101010;
+  --ijo-tua-2: #2B4535;
+  --ijo-3: #3C6046;
+  --ijo-4: #4A6654;
+  --ijo-muda-5: #8A9A93;
+  --putih-6: #FCFDFE;
+  --abu-agak-gelap: #A7A7A7;
+  --abu-default: #D9D9D9;
+  --abu-bg: #F3F3F3;
+}
+
 body {
-  background-color: #2B4535;
+  background-color: var(--putih-6);
 }
 
 @media screen and (min-width: 390px) and (max-width: 480px) {
