@@ -60,7 +60,7 @@ export default function Merchant() {
                     </div>
             
                     <div className="buttons">
-                        <Link href="#"><button className={styles.setup_next_btn}>Lanjutkan</button></Link>
+                        <Link href="/daftar/merchant/data-usaha"><button className={styles.setup_next_btn}>Lanjutkan</button></Link>
                     </div>
                 </div>
             </div>

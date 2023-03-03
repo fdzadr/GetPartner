@@ -31,7 +31,7 @@ export default function Portal() {
                     </div>
 
                     <div class="buttons">
-                        <Link href="/daftar/merchant/merchant"> 
+                        <Link href="/daftar/merchant/data-diri"> 
                             <button className={styles.portal_btn}><span class="icon">
                                 <Image 
                                 src="/aset/login n signin aset/portal/marketstall.png" 
@@ -47,7 +47,7 @@ export default function Portal() {
                     </div>
 
                     <div class="buttons">
-                        <a href="#">
+                        <Link href="#">
                         <button className={styles.portal_btn}>
                             <span class="icon">
                             <Image 
@@ -60,7 +60,7 @@ export default function Portal() {
                             &nbsp;
                             Driver Partnership
                         </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

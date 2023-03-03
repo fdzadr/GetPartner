@@ -4,8 +4,6 @@ import { Inter } from '@next/font/google';
 import styles from '../styles/login n signin/Signin.module.css';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Daftar() {
   return (
     <>
