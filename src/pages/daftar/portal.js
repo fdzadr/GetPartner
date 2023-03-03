@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '@/styles/login n signin/Portal.module.css'
 
 export default function Portal() {
@@ -30,20 +31,19 @@ export default function Portal() {
                     </div>
 
                     <div class="buttons">
-                        <a href="#">
-                        <button className={styles.portal_btn}>
-                            <span class="icon">
-                            <Image 
-                            src="/aset/login n signin aset/portal/marketstall.png" 
-                            alt="logo1"
-                            width={35}
-                            height={35}
-                            />
-                            </span>
-                            &nbsp;
-                            Merchant Partnership
-                        </button>
-                        </a>
+                        <Link href="/daftar/merchant/merchant"> 
+                            <button className={styles.portal_btn}><span class="icon">
+                                <Image 
+                                src="/aset/login n signin aset/portal/marketstall.png" 
+                                alt="logo1"
+                                width={35}
+                                height={35}
+                                />
+                                </span>
+                                &nbsp;
+                                Merchant Partnership
+                            </button>
+                        </Link>
                     </div>
 
                     <div class="buttons">

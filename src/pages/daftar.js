@@ -27,18 +27,15 @@ export default function Daftar() {
             </div>
         
             <div className={styles.signin_main}>
-                <div className="login__field">
-                    <i className="login__icon fas fa-user"></i>
+                <div className="signin_field">
                     <input type="text" className={styles.signin_input} placeholder="Phone Number"/>
                 </div>
 
-                <div className="login__field">
-                    <i className="login__icon fas fa-user"></i>
+                <div className="signin_field">
                     <input type="text" className={styles.signin_input} placeholder="Password"/>
                 </div>
         
-                <div className="login__field">
-                    <i className="login__icon fas fa-lock"></i>
+                <div className="signin_field">
                     <input type="password" className={styles.signin_input} placeholder="Confirm Password"/>
                 </div>
         
@@ -49,7 +46,6 @@ export default function Daftar() {
                 <div className={styles.loginask}>
                     Sudah punya akun? <Link href="/index" className="gologin">Masuk</Link>
                 </div>
-                
             </div>
         </div>
       </div>

@@ -27,13 +27,11 @@ export default function Home() {
             </div>
         
             <div className={styles.login_main}>
-                <div className="login__field">
-                    <i className="login__icon fas fa-user"></i>
+                <div className="login_field">
                     <input type="text" className={styles.login_input} placeholder="Phone Number"/>
                 </div>
         
-                <div className="login__field">
-                    <i className="login__icon fas fa-lock"></i>
+                <div className="login_field">
                     <input type="password" className={styles.login_input} placeholder="Password"/>
                 </div>
         
@@ -44,7 +42,6 @@ export default function Home() {
                 <div className={styles.regisask}>
                     Belum punya akun? <Link href="/daftar" className="goregister">Daftar</Link>
                 </div>
-                
             </div>
         </div>
       </div>
