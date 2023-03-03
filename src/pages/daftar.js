@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import styles from '../styles/Signin.module.css';
+import styles from '../styles/login n signin/Signin.module.css';
 import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -43,7 +43,7 @@ export default function Daftar() {
                 </div>
         
                 <div className="buttons">
-                    <Link href="#"><button className={styles.signin_btn}>Daftar</button></Link>
+                    <Link href="/daftar/portal"><button className={styles.signin_btn}>Daftar</button></Link>
                 </div>
         
                 <div className={styles.loginask}>
