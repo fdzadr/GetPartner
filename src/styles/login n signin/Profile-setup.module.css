@@ -111,6 +111,10 @@
     overflow: hidden;
 }
 
+.buttons {
+    text-align: center;
+}
+
 .setup_next_btn {
     border: none;
     background: var(--ijo-3);
@@ -124,13 +128,13 @@
 }
 
 .setup_check {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 12px;
     text-align: start;
 }
 
 .check_label {
-    margin-top: -18px;
+    margin-top: -25px;
     margin-left: 20px;
 }
 

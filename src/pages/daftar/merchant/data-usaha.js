@@ -60,17 +60,17 @@ export default function Merchant() {
                         <label className={styles.non_text_group_text}>Foto Rumah Makan</label>
                         <input type="file" accept="image/*" className={styles.setup_upload}/>
                     </div>
+                </div>
 
-                    <div class="form-check" className={styles.setup_check}>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                        <label class="form-check-label" className={styles.check_label} for="flexCheckDefault">
+                <div class="form-check" className={styles.setup_check}>
+                        <input type="checkbox" value="" className={styles.checkbox}/>
+                        <label className={styles.check_label}>
                             Saya telah membaca dan menyetujui <span className={styles.snk}>Syarat & Ketentuan</span> dan siap menjadi Partner Resmi dari GetJob.
                         </label>
-                    </div>
-            
-                    <div className="buttons">
+                </div>
+
+                <div className={styles.buttons}>
                         <Link href="#"><button className={styles.setup_next_btn}>Selesai</button></Link>
-                    </div>
                 </div>
             </div>
         </div>
