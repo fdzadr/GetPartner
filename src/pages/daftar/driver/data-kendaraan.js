@@ -50,14 +50,14 @@ export default function Merchant() {
                     </div>
             
                     <div class="input-group mb-3" className={styles.non_text_group}>
-                        <label class="input-group-text" className={styles.non_text_group_text} for="inputGroupFile01">Foto Kendaraan</label>
-                        <input type="file" class="form-control" className={styles.setup_upload} id="inputGroupFile01" />
+                        <label className={styles.non_text_group_text}>Foto Kendaraan</label>
+                        <input type="file" accept="image/*" className={styles.setup_upload}/>
                     </div>
 
                     <div class="form-check" className={styles.setup_check}>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                        <label class="form-check-label" className={styles.check_label} for="flexCheckDefault">
-                            Saya telah membaca dan menyetujui <span className={styles.snk}>Syarat & Ketentuan</span> dan siap menjadi Driver Resmi dari GetJob.
+                        <input class="form-check-input" type="checkbox" value=""/>
+                        <label className={styles.check_label}>
+                            Saya telah membaca dan menyetujui <span className={styles.snk}>Syarat & Ketentuan</span> dan siap menjadi Partner Resmi dari GetJob.
                         </label>
                     </div>
             

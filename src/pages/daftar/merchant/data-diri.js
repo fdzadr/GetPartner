@@ -55,8 +55,8 @@ export default function Merchant() {
                     </div>
             
                     <div class="input-group mb-3" className={styles.non_text_group}>
-                        <label class="input-group-text" className={styles.non_text_group_text} for="inputGroupFile01">Foto KTP</label>
-                        <input type="file" class="form-control" className={styles.setup_upload} id="inputGroupFile01" />
+                        <label className={styles.non_text_group_text}>Foto KTP</label>
+                        <input type="file" accept="image/*" className={styles.setup_upload}/>
                     </div>
             
                     <div className="buttons">
