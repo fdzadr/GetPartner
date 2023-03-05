@@ -47,7 +47,7 @@ export default function Portal() {
                     </div>
 
                     <div class="buttons">
-                        <Link href="#">
+                        <Link href="/daftar/driver/data-diri">
                         <button className={styles.portal_btn}>
                             <span class="icon">
                             <Image 
