@@ -2,8 +2,44 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/login n signin/Profile-setup.module.css'
+import { useState } from 'react';
+import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
 
 export default function Merchant() {
+
+    
+    const router = useRouter();
+
+    const [namakendaraan, setKendaraan] = useState("");
+    const [nomorpolisi, setNP] = useState("");
+    const [warna, setWarna] = useState("");
+  
+    const handler = async (e) => {
+      e.preventDefault();
+  
+      let nk = namakendaraan;
+      let np = nomorpolisi;
+      let w = warna;
+  
+      console.log(namakendaraan, nomorpolisi, warna)
+  
+      const options = {
+          method:"POST",
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({namakendaraan:nk, nomorpolisi:np, warna:w})
+      }
+    
+      await fetch('http://localhost:3000/api/auth/data-kendaraan', options)
+          .then(res=>res.json())
+          .then((datas)=>{
+            console.log(datas);
+            if(datas.status)router.push('http://localhost:3000/homepage');
+            else alert(datas.message);
+          })
+    
+    }
+
     return (
         <>
         <Head>
@@ -38,15 +74,30 @@ export default function Merchant() {
 
                 <div className={styles.setup_main}>
                     <div className="merchant_field">
-                        <input type="text" className={styles.setup_input} placeholder="Nama Kendaraan"/>
+                        <input 
+                        type="text" 
+                        className={styles.setup_input} 
+                        placeholder="Nama Kendaraan"
+                        onChange={(e) => setKendaraan(e.target.value)}
+                        />
                     </div>
 
                     <div className="merchant_field">
-                        <input type="text" className={styles.setup_input} placeholder="Nomor Polisi Kendaraan"/>
+                        <input 
+                        type="text" 
+                        className={styles.setup_input} 
+                        placeholder="Nomor Polisi Kendaraan"
+                        onChange={(e) => setNP(e.target.value)}
+                        />
                     </div>
 
                     <div className="merchant_field">
-                        <input type="text" className={styles.setup_input} placeholder="Warna Kendaraan"/>
+                        <input 
+                        type="text" 
+                        className={styles.setup_input} 
+                        placeholder="Warna Kendaraan"
+                        onChange={(e) => setWarna(e.target.value)}
+                        />
                     </div>
             
                     <div class="input-group mb-3" className={styles.non_text_group}>
@@ -62,7 +113,7 @@ export default function Merchant() {
                     </div>
             
                     <div className="buttons">
-                        <Link href="#"><button className={styles.setup_next_btn}>Selesai</button></Link>
+                        <Link href="#"><button className={styles.setup_next_btn} onClick={(e) => handler(e)}>Selesai</button></Link>
                     </div>
                 </div>
             </div>
