@@ -17,7 +17,7 @@ export default function Daftar() {
   const [cpassword, setCpassword] = useState("");
 
   const handler = async (e) => {
-    e.preventDefault();
+    e.preventDefault();   
 
     let pn = phonenumber;
     let p = password;
@@ -95,7 +95,7 @@ export default function Daftar() {
                 </div>
         
                 <div className={styles.loginask}>
-                    Sudah punya akun? <Link href="/index" className="gologin">Masuk</Link>
+                    Sudah punya akun? <Link href="/" className="gologin">Masuk</Link>
                 </div>
             </div>
         </div>
