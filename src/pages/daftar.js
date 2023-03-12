@@ -74,7 +74,7 @@ export default function Daftar() {
 
                 <div className="signin_field">
                     <input 
-                    type="text" 
+                    type="password" 
                     className={styles.signin_input} 
                     placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)}

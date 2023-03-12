@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/login n signin/Portal.module.css'
+import { getSession, useSession, signOut } from "next-auth/react"
 
 export default function Portal() {
     return (
@@ -68,4 +69,25 @@ export default function Portal() {
         </main>
         </>
     )
+}
+
+export async function getServerSideProps({req}){
+    const session = await getSession({req})
+    console.log(session)
+
+    if(!session){
+        return{
+            redirect:{
+                destination:'http://localhost:3000',
+                permanent:false
+            }
+        }
+        
+    }
+
+    return {
+        props: {session},
+    }
+
+    
 }

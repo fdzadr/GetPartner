@@ -38,6 +38,24 @@ export default NextAuth({
         })
         
     ],
+    session: {
+        jwt: true,
+        maxAge: 30 * 24 * 60 * 60,
+      },
+      callbacks: {
+        async session({ session, token }) {
+          session.user = token.user;
+          session.user.id = token.uid
+          return session;
+        },
+        async jwt({ token, user }) {
+          if (user) {
+            token.user = user;
+            token.uid = user.id
+          }
+          return token;
+        },
+      },
     secret:"maBHjeprY5mTpqKoT7eExJj3eI2SsDfIdKCLLSlkBI="
 
 })

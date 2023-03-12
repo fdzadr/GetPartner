@@ -5,6 +5,7 @@ import styles from '@/styles/login n signin/Profile-setup.module.css'
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
+import { getSession, useSession, signOut } from "next-auth/react"
 
 export default function Merchant() {
 
@@ -121,4 +122,21 @@ export default function Merchant() {
         </main>
         </>
     )
+}
+
+export async function getServerSideProps({req}){
+    const session = await getSession({req})
+
+    if(!session){
+        return{
+            redirect:{
+                destination:'http://localhost:3000/daftar/driver/data-diri',
+                permanent:false
+            }
+        }
+    }
+
+    return {
+        props: {session}
+    }
 }
