@@ -27,15 +27,15 @@ export default function Daftar() {
             Yuk, isi informasi produkmu
         </div>
         <div className={styles.input_box}>
-            {/* <div className={styles.paperclip}>
+            <div className={styles.paperclip}>
                 <Image 
                 src="/aset/paperclip.svg" 
                 alt="attach"
-                width={10}
-                height={10}
+                width={12}
+                height={12}
                 />
-            </div> */}
-            <div className={styles.line}>
+            </div>
+            <div className={styles.line_top}>
                 <div className={styles.input}>
                     Foto Produk
                 </div>
@@ -47,13 +47,22 @@ export default function Daftar() {
                 </div>
             </div>
 
-            <div className={styles.line}>
+            <div className={styles.desc_line}>
                 <div className={styles.input}>
                     Deskripsi Produk
                 </div>
             </div>
 
-            <div className={styles.line}>
+            <div className={styles.down}>
+                <Image 
+                src="/aset/inputproduk/down.svg" 
+                alt="attach"
+                width={12}
+                height={12}
+                />
+            </div>
+
+            <div className={styles.line_top}>
                 <div className={styles.input}>
                     Etalase Produk
                 </div>
