@@ -20,7 +20,7 @@ export default async function handler(req,res){
         const checkexisting = await User.findOne({phonenumber});
         if(checkexisting) return res.status(422).json({status:false,message:"User already exist!"});
 
-        const user = await User.create({ phonenumber, password:await hash(password, 12,), cpassword}//, function(err, data){
+        const user = await User.create({ phonenumber, password, password:await hash(password, 12,), cpassword}//, function(err, data){
           // if(err)return res.status(404).json({err});
           // return res.status(201).json({status:true,user:data})  
         // }

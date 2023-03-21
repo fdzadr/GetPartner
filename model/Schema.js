@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     cpassword: {
         type: String,
         required: [true, "Please provide a password"]
-    }
+    },
 });
   
 export default mongoose.models.Schema || mongoose.model("Schema", UserSchema);

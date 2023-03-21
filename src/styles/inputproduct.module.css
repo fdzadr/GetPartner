@@ -38,11 +38,13 @@
 
 .input_main {
     text-align: center;
+    border: none;
 }
 
 .input {
     font-size: small;
     margin-top: -18px;
+    border: none;
 }
 
 .line {
