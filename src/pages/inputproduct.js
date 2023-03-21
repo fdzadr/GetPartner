@@ -29,7 +29,7 @@ export default function Daftar() {
         <div className={styles.input_box}>
             <div className={styles.paperclip}>
                 <Image 
-                src="/aset/paperclip.svg" 
+                src="/aset/inputproduk/paperclip.svg" 
                 alt="attach"
                 width={12}
                 height={12}
@@ -53,25 +53,28 @@ export default function Daftar() {
                 </div>
             </div>
 
-            <div className={styles.down}>
-                <Image 
-                src="/aset/inputproduk/down.svg" 
-                alt="attach"
-                width={12}
-                height={12}
-                />
+            <div class="input-group mb-3" className={styles.non_text_group}>
+                <select 
+                    class="form-select" 
+                    className={styles.setup_select} 
+                    id="inputGroupSelect01"
+                    onChange={(e) => setKota(e.target.value)}                        >
+                        <option selected>Status Produk</option>
+                        <option value="1">Makanan</option>
+                        <option value="2">Minuman</option>
+                </select>
             </div>
 
-            <div className={styles.line_top}>
-                <div className={styles.input}>
-                    Etalase Produk
-                </div>
-            </div>
-
-            <div className={styles.bot_line}>
-                <div className={styles.input}>
-                    Status Produk
-                </div>
+            <div class="input-group mb-3" className={styles.non_text_group}>
+                <select 
+                    class="form-select" 
+                    className={styles.setup_select} 
+                    id="inputGroupSelect01"
+                    onChange={(e) => setKota(e.target.value)}                        >
+                        <option selected>Etalase Produk</option>
+                        <option value="1">Aktif</option>
+                        <option value="2">Non-aktif</option>
+                </select>
             </div>
 
             <div className="buttons">

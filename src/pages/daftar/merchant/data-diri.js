@@ -3,43 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/login n signin/Profile-setup.module.css'
 import { useState } from 'react';
-import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
-import { getSession, useSession, signOut } from "next-auth/react"
 
 export default function Merchant() {
-    
-  const router = useRouter();
-
-  const [nama, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [kota, setKota] = useState("");
-
-  const handler = async (e) => {
-    e.preventDefault();
-
-    let n = nama;
-    let em = email;
-    let k = kota;
-
-    console.log(nama,email,kota)
-
-    const options = {
-        method:"POST",
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({nama:n, email:em, kota:k})
-    }
-  
-    await fetch('http://localhost:3000/api/auth/data-diri', options)
-        .then(res=>res.json())
-        .then((datas)=>{
-          console.log(datas);
-          if(datas.status)router.push('http://localhost:3000/daftar/merchant/data-usaha');
-          else alert(datas.message);
-        })
-  
-  }
-
 
     return (
         <>
@@ -120,21 +86,4 @@ export default function Merchant() {
         </main>
         </>
     )
-}
-
-export async function getServerSideProps({req}){
-    const session = await getSession({req})
-
-    if(!session){
-        return{
-            redirect:{
-                destination:'http://localhost:3000',
-                permanent:false
-            }
-        }
-    }
-
-    return {
-        props: {session}
-    }
 }

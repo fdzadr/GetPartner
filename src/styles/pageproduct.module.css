@@ -49,7 +49,7 @@
     margin-top: 15px;
     padding: 10px;
     height: 36px;;
-    width: 90%;
+    width: 94%;
     border-radius: 30px;
     color: var(black);
     font-size: 12px;
@@ -63,7 +63,7 @@
     margin-top: 13px;
     padding: 10px;
     height: 36px;;
-    width: 90%;
+    width: 94%;
     border-radius: 30px;
     color: var(black);
     font-size: 12px;
@@ -123,8 +123,8 @@
   } 
   
   .status {
-    margin-left: 80%;
-    margin-top: -51px;
+    margin-left: 46%;
+    margin-top: -67px;
   }
 
 .container {
@@ -179,4 +179,9 @@
 .pen {
     margin-top: -31px;
     margin-left: 100px;
+}
+
+.pen2 {
+  margin-left: 95%;
+  margin-top: -22px;
 }

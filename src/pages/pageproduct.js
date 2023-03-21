@@ -26,7 +26,7 @@ export default function Daftar() {
     <div className={styles.setting_main}>
         <div className={styles.etalase}>
             <div className={styles.namaeta}>
-                Makan Siang (3)
+                Makanan (3)
             </div>
             <div className='setting_main'>
                 <div className={styles.line1}>
@@ -50,6 +50,14 @@ export default function Daftar() {
                             alt="aktif"
                             width={48} 
                             height={18} 
+                        />
+                    </div>
+                    <div className={styles.pen2}>
+                        <Image
+                            src='/aset/pageproduk/penireng.svg'
+                            alt="edit"
+                            width={12}
+                            height={12}
                         />
                     </div>
                 </div>
@@ -79,6 +87,14 @@ export default function Daftar() {
                             height={18} 
                         />
                     </div>
+                    <div className={styles.pen2}>
+                        <Image
+                            src='/aset/pageproduk/penireng.svg'
+                            alt="edit"
+                            width={12}
+                            height={12}
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -104,6 +120,14 @@ export default function Daftar() {
                             alt="aktif"
                             width={48} 
                             height={18} 
+                        />
+                    </div>
+                    <div className={styles.pen2}>
+                        <Image
+                            src='/aset/pageproduk/penireng.svg'
+                            alt="edit"
+                            width={12}
+                            height={12}
                         />
                     </div>
                 </div>
@@ -138,6 +162,14 @@ export default function Daftar() {
                             height={18} 
                         />
                     </div>
+                    <div className={styles.pen2}>
+                        <Image
+                            src='/aset/pageproduk/penireng.svg'
+                            alt="edit"
+                            width={12}
+                            height={12}
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -163,6 +195,14 @@ export default function Daftar() {
                             alt="non-aktif"
                             width={59} 
                             height={18} 
+                        />
+                    </div>
+                    <div className={styles.pen2}>
+                        <Image
+                            src='/aset/pageproduk/penireng.svg'
+                            alt="edit"
+                            width={12}
+                            height={12}
                         />
                     </div>
                 </div>

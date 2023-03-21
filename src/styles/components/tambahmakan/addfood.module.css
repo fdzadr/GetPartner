@@ -1,0 +1,57 @@
+  .setting_main {
+    text-align: center;     
+    text-decoration: none;
+  }
+  
+  .box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .line1 {
+    margin-top: 1px;
+    width: 100%;
+    height: 60px;
+    text-align: left;
+    padding: 6px;
+    background-color: var(--putih-6);
+    border-top: 0px;
+    border-bottom: 1px solid #000000;
+    border-left: 0px;
+    border-right: 0px;
+    color: black;
+  }
+  
+  .status {
+    margin-left: 46%;
+    margin-top: -67px;
+  }
+
+.container {
+    margin-left: 55px;
+    margin-top: -47px;
+    height: 60px;
+    width: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.small {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.etalase {
+    text-align:left;
+}
+
+.foto_mkn {
+    border-radius: 0px;
+}
+
+.pen2 {
+  margin-left: 95%;
+  margin-top: -22px;
+}
