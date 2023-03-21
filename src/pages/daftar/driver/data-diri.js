@@ -5,6 +5,7 @@ import styles from '@/styles/login n signin/Profile-setup.module.css'
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
+import Navbar from '/components/navbar-home';
 
 export default function Merchant() {
 

@@ -10,6 +10,10 @@
   --abu-bg: #F3F3F3;
 }
 
+nav {
+  background-color: var(--ijo-3);
+}
+
 body {
   background-color: var(--putih-6);
 }
