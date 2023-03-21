@@ -12,10 +12,18 @@
 
 nav {
   background-color: var(--ijo-3);
+  height: 70px;
+  width: 101%;
+}
+
+footer {
+  background-color: var(--putih-6);
+  height: 48px;
+  width: 101%;
 }
 
 body {
-  background-color: var(--putih-6);
+  background-color: var(--abu-bg);
 }
 
 @media screen and (min-width: 390px) and (max-width: 480px) {

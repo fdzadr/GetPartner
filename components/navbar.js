@@ -1,16 +1,24 @@
 import Image from 'next/image';
-import styles from '@/styles/comps/navbar.module.css';
+import styles from '@/styles/components/navbar.module.css';
 import Link from 'next/link';
 
 export default function Navbar() {
     return (
         <>
         <nav class='navbar sticky-top'>
-            <div class="container-fluid">
-                <div className={styles.logo_getfull}>
+            <div className={styles.navbar}>
+                <div className={styles.backtopleft}>
+                    <Image 
+                    src="/aset/header/backtopleft.svg" 
+                    alt="logo"
+                    width={33}
+                    height={33}
+                    />
+                </div>
+                <div className={styles.logo_getjob}>
                     <Link href="/homepage">
                     <Image 
-                    src="/aset/logo nav/Getfull.svg" 
+                    src="/aset/header/getjob.svg" 
                     alt="logo"
                     width={90}
                     height={35}
@@ -21,7 +29,7 @@ export default function Navbar() {
                 <div className={styles.logo_profile}>
                     <Link href="/setting">
                     <Image 
-                    src="/aset/logo nav/profile.svg" 
+                    src="/aset/header/profile.svg" 
                     alt="logo"
                     width={40}
                     height={40}

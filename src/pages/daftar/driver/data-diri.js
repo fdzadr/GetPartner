@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/login n signin/Profile-setup.module.css'
 import { useState } from 'react';
-import { useFormik } from 'formik';
+import { ErrorMessage, useFormik } from 'formik';
 import { useRouter } from 'next/router';
-import Navbar from '/components/navbar-home';
+import { getSession, useSession, signOut } from "next-auth/react"
 
 export default function Merchant() {
 
@@ -82,6 +82,7 @@ export default function Merchant() {
                         onChange={(e) => setName(e.target.value)}
                         />
                     </div>
+                    errors={ErrorMessage.nama}
 
                     <div className="merchant_field">
                         <input 
@@ -120,4 +121,21 @@ export default function Merchant() {
         </main>
         </>
     )
+}
+
+export async function getServerSideProps({req}){
+    const session = await getSession({req})
+
+    if(!session){
+        return{
+            redirect:{
+                destination:'http://localhost:3000',
+                permanent:false
+            }
+        }
+    }
+
+    return {
+        props: {session}
+    }
 }

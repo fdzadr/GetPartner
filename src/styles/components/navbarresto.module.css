@@ -1,0 +1,32 @@
+.backtopleft {
+    margin: 0px 14px;
+    padding-top: 22px;
+}
+
+.foto_resto {
+    margin: -48px 0 0 60px;
+    border-radius: 10px;
+}
+
+.navbar {
+    height: 79px;
+    width: 100%;
+    background-color: var(--ijo-3);
+}
+
+.container {
+    margin-left: 138px;
+    margin-top: -55px;
+    height: 60px;
+    width: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--putih-6);
+}
+
+.small {
+    font-size: 10px;
+    font-weight: 100;
+    line-height: 1.2;
+}

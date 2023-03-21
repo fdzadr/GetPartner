@@ -1,7 +1,8 @@
-import { Schema,model,models } from 'mongoose'
+import { Schema,model,models, SchemaType } from 'mongoose'
 import mongoose from 'mongoose';
   
 const UserDriver = new mongoose.Schema({
+    _id: Schema.Types.ObjectId,
     nama: {
       type: String,
       required: [true, "Please provide a Name"],
@@ -11,10 +12,10 @@ const UserDriver = new mongoose.Schema({
       required: [true, "Please provide an Email"],
     },
     kota: {
-        type: String,
-        required: [true, "Please provide a password"]
-    }
+      type: String,
+      required: [true, "Please provide a City"]
+    },
 });
   
-export default mongoose.models.Driver || mongoose.model("Driver", UserDriver);
+export default mongoose.models.Driver || mongoose.model('Driver', UserDriver);
   
