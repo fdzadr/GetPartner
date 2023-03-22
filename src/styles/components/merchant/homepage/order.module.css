@@ -1,0 +1,15 @@
+.container {
+    border: 2px solid black;
+    width: 325px;
+    border-radius: 20px;
+}
+
+.konten {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user {
+    border-right: 2px solid var(--ijo-3);
+}

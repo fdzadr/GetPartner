@@ -1,0 +1,17 @@
+.etalase {
+    color: var(--ijo-3);
+    margin: 20px 0 20px 0;
+    border: 2px solid black;
+    width: 340px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.btn {
+    border: 2px solid black;
+    width: 340px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px
+}

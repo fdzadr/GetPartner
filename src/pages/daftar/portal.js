@@ -73,7 +73,6 @@ export default function Portal() {
 
 export async function getServerSideProps({req}){
     const session = await getSession({req})
-    console.log(session)
 
     if(!session){
         return{
@@ -81,13 +80,9 @@ export async function getServerSideProps({req}){
                 destination:'http://localhost:3000',
                 permanent:false
             }
-        }
-        
+        }  
     }
-
     return {
         props: {session},
-    }
-
-    
+    } 
 }

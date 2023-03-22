@@ -1,7 +1,8 @@
 .container {
-   padding: 5px;
-   display: flex;
-   justify-content: space-around;
+    height: 48px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .logo {
