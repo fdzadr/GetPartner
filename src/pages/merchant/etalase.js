@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Navbar from 'components/navbarresto';
 import AddEtalase from 'components/merchant_home/add_etalase';
 import Footer from 'components/footer'
+import styles from '@/styles/components/merchant/add_etalase/add_etalase.module.css'
 
 export default function Etalase() {
   return (
@@ -19,7 +20,19 @@ export default function Etalase() {
         <h5 className='ms-4'>Etalase</h5>
     </div>
 
-    <div className='my-3 d-flex justify-content-center'>
+    <div className='default_etalase d-flex justify-content-center'>
+      <div className={styles.etalase}>
+        Makanan
+      </div>
+    </div>
+
+    <div className='default_etalase d-flex justify-content-center'>
+      <div className={styles.etalase}>
+        Minuman
+      </div>
+    </div>
+
+    <div className='d-flex justify-content-center'>
       <AddEtalase/>
     </div>
     

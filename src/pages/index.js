@@ -80,7 +80,11 @@ export default function Home() {
                 </div>
         
                 <div className="buttons">
-                    <Link href="#"><button onClick={(e) => handler(e)} className={styles.login_btn}>Masuk</button></Link>
+                    <Link href="merchant/homepage"><button onClick={(e) => handler(e)} className={styles.login_btn}>Masuk Sebagai Merchant</button></Link>
+                </div>
+
+                <div className="buttons">
+                    <Link href="merchant/homepage"><button onClick={(e) => handler(e)} className={styles.login_btn}>Masuk Sebagai Driver</button></Link>
                 </div>
         
                 <div className={styles.regisask}>

@@ -169,7 +169,7 @@ export default function Daftar() {
             </div>
         </div>
         <div className="buttons">
-                <Link href="/"><button className={styles.ubah_btn}>Ubah Etalase</button>
+                <Link href="etalase"><button className={styles.ubah_btn}>Ubah Etalase</button>
                     <div className={styles.pen}>
                         <Image 
                             src='/aset/pageproduk/pen.svg' 
@@ -181,10 +181,23 @@ export default function Daftar() {
                 </Link>
         </div>
         <div className="buttons">
-                <Link href="/"><button className={styles.tambah_btn}>Tambah Produk</button>
+                <Link href="inputproduct"><button className={styles.tambah_btn}>Tambah Produk</button>
                     <div className={styles.plus}>
                         <Image 
                             src='/aset/pageproduk/plus.svg' 
+                            alt="tambah"
+                            width={16} 
+                            height={16} 
+                        />
+                    </div>
+                </Link>
+        </div>
+
+        <div className="buttons">
+                <Link href="customer_view"><button className={styles.tambah_btn}>Customer View</button>
+                    <div className={styles.plus}>
+                    <Image 
+                            src='/aset/pageproduk/mata.svg' 
                             alt="tambah"
                             width={16} 
                             height={16} 

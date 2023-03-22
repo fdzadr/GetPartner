@@ -3,6 +3,12 @@
     padding-top: 22px;
 }
 
+.btn {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
 .foto_resto {
     margin: -48px 0 0 60px;
     border-radius: 10px;

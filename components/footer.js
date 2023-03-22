@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '@/styles/components/footer.module.css';
+import Link from 'next/link';
 
 export default function Navbar() {
     return (
@@ -16,21 +17,25 @@ export default function Navbar() {
             </button>
 
             <button className={styles.logo}>
+                <Link href='homepage'>
                 <Image 
                     src="/aset/footer/home.svg" 
                     alt="home"
                     width={36}
                     height={36}
                 />
+                </Link>
             </button>
 
             <button className={styles.logo}>
+            <Link href='pageproduct'>
                 <Image 
                     src="/aset/footer/list.svg" 
                     alt="list"
                     width={28}
                     height={28}
                 />
+                </Link>
             </button>
 
             <button className={styles.logo}>

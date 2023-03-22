@@ -2,6 +2,12 @@
     margin: 10px 15px;
 }
 
+.btn {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
 .logo_getjob {
     margin: -37px 0 0 56px;
 }

@@ -1,19 +1,28 @@
 import Image from 'next/image';
 import styles from '@/styles/components/navbar.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
+    const router = useRouter();
+
+    function Back() {
+    router.back();
+    }
+
     return (
         <>
         <nav class='navbar sticky-top'>
             <div className={styles.navbar}>
                 <div className={styles.backtopleft}>
-                    <Image 
-                    src="/aset/header/backtopleft.svg" 
-                    alt="logo"
-                    width={33}
-                    height={33}
-                    />
+                    <button onClick={Back} className={styles.btn}>
+                        <Image 
+                        src="/aset/header/backtopleft.svg" 
+                        alt="logo"
+                        width={33}
+                        height={33}
+                        />
+                    </button>
                 </div>
                 <div className={styles.logo_getjob}>
                     <Link href="/homepage">
