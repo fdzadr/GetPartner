@@ -5,6 +5,10 @@ import styles from '@/styles/login n signin/Portal.module.css'
 import { getSession, useSession, signOut } from "next-auth/react"
 
 export default function Portal() {
+
+    const session = useSession();
+    console.log(session.data.user.id);
+
     return (
         <>
         <Head>

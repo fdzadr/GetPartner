@@ -13,6 +13,9 @@ const UserUsaha = new mongoose.Schema({
     jenis: {
         type: String,
         required: [true, "Please provide a Resto Type"]
+    },
+    ownerid: {
+      type:String
     }
 });
   

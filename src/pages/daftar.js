@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
+import { signIn } from 'next-auth/react'
 
 export default function Daftar() {
 
@@ -35,9 +36,16 @@ export default function Daftar() {
       .then(res=>res.json())
       .then((data)=>{
         console.log(data);
-        if(data.status)router.push('http://localhost:3000');
-        else alert(data.message);
       })
+
+      const status = await signIn('credentials',{
+        redirect:false,
+        phonenumber:pn,
+        password:p,
+        callbackUrl:"http://localhost:3000/daftar/portal"
+      })
+  
+      if(status.ok) router.push(status.url) 
 
   }
 

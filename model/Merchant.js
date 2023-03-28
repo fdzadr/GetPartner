@@ -12,8 +12,9 @@ const UserMerchant = new mongoose.Schema({
     },
     kota: {
         type: String,
-        required: [true, "Please provide a password"],
-        enum: {values: ['Pilih Kota'],message: "Required"}
+    },
+    ownerid: {
+      type: String,
     }
 });
   

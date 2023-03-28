@@ -32,6 +32,25 @@ export default function Home() {
       redirect:false,
       phonenumber:pn,
       password:p,
+      callbackUrl:"http://localhost:3000/merchant/homepage"
+    })
+
+    if(status.ok) router.push(status.url) 
+  }
+
+  const handlerDriver = async (e) => {
+    e.preventDefault();
+
+    let pn = phonenumber;
+    let p = password;
+
+    console.log(phonenumber,password)
+
+    
+    const status = await signIn('credentials',{
+      redirect:false,
+      phonenumber:pn,
+      password:p,
       callbackUrl:"http://localhost:3000/daftar/portal"
     })
 
@@ -84,7 +103,7 @@ export default function Home() {
                 </div>
 
                 <div className="buttons">
-                    <Link href="merchant/homepage"><button onClick={(e) => handler(e)} className={styles.login_btn}>Masuk Sebagai Driver</button></Link>
+                    <Link href="merchant/homepage"><button onClick={(e) => handlerDriver(e)} className={styles.login_btn}>Masuk Sebagai Driver</button></Link>
                 </div>
         
                 <div className={styles.regisask}>

@@ -1,5 +1,5 @@
 import connectMongo from "database/conn"
-import Usaha from 'model/Data-Usaha'
+import Product from 'model/Product'
 import { hash } from 'bcryptjs'
 import Router from "next/router"
 import { createRouter } from "next-connect"
@@ -14,24 +14,22 @@ export default async function handler(req,res){
     if(req.method === 'POST'){
 
         if(!req.body)return res.status(404).json({error:"Don't have form data!"});
-        const{namaresto,alamat,jenis,ownerid} = req.body
+        const{namaproduk,harga,deskripsi,ownerid} = req.body
 
-
-        const usaha = await Usaha.create({namaresto,alamat,jenis,ownerid}//, function(err, data){
+        const produk = await Product.create({namaproduk,harga,deskripsi,ownerid}//, function(err, data){
           // if(err)return res.status(404).json({err});
           // return res.status(201).json({status:true,user:data})  
         // }
         )
 
-        if (!usaha) {
+        if (!produk) {
           return res.status(400).json({status:false,message:"failed to create user"})
         }
 
         return res.status(200).json({status:true,message:"user created"})
 
-    }
-    else if (req.method === 'GET') {
-      const data = await Usaha.find({})
+    } else if (req.method === 'GET') {
+      const data = await Product.find({})
 
       if (!data) {
         return res.status(404).json({message: 'product not found'});

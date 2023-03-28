@@ -8,8 +8,41 @@ import Footer from '/components/footer';
 import Navbar from '/components/navbar';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 
 export default function Daftar() {
+
+  const session = useSession();
+  const router = useRouter();
+
+  const [namaproduk, setProduk] = useState("");
+  const [harga, setHarga] = useState("");
+  const [deskripsi, setDeskripsi] = useState("");
+  const [ownerid] = useState(session.data.user.id);
+
+  const handler = async (e) => {
+    e.preventDefault();   
+
+    let np = namaproduk;
+    let ha = harga;
+    let des = deskripsi;
+    let s = ownerid;
+
+    const options = {
+      method:"POST",
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({namaproduk:np, harga:ha, deskripsi:des, ownerid:s})
+    }
+
+    await fetch('http://localhost:3000/api/produk/produk-api', options)
+      .then(res=>res.json())
+      .then((data)=>{
+        console.log(data);
+        if(data.status)router.push('http://localhost:3000/merchant/pageproduct');
+        else alert(data.message);
+      })
+
+  }
 
   return (
     <>
@@ -38,7 +71,7 @@ export default function Daftar() {
                 type="text" 
                 className={styles.setup_input} 
                 placeholder="Nama Produk"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setProduk(e.target.value)}
                 />
             </div>
 
@@ -47,7 +80,7 @@ export default function Daftar() {
                 type="text" 
                 className={styles.setup_input} 
                 placeholder="Harga (Rp)"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setHarga(e.target.value)}
                 />
             </div>
 
@@ -56,7 +89,7 @@ export default function Daftar() {
                 type="text" 
                 className={styles.setup_input} 
                 placeholder="Deskripsi Produk"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setDeskripsi(e.target.value)}
                 />
             </div>
 
@@ -65,7 +98,6 @@ export default function Daftar() {
                 class="form-select" 
                 className={styles.setup_select} 
                 id="inputGroupSelect01"
-                onChange={(e) => setKota(e.target.value)}
                 >
                     <option selected>Etalase</option>
                     <option value="1">Makanan</option>
@@ -78,7 +110,6 @@ export default function Daftar() {
                 class="form-select" 
                 className={styles.setup_select} 
                 id="inputGroupSelect01"
-                onChange={(e) => setKota(e.target.value)}
                 >
                     <option selected>Status</option>
                     <option value="1">Aktif</option>
@@ -88,7 +119,7 @@ export default function Daftar() {
 
 
             <div className="buttons">
-                <button className={styles.tambah_btn}>Tambahkan Produk</button>
+                <button onClick={(e) => handler(e)} className={styles.tambah_btn}>Tambahkan Produk</button>
             </div>
         </div>
 

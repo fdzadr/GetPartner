@@ -8,12 +8,16 @@ import { useRouter } from 'next/router';
 import { getSession, useSession, signOut } from "next-auth/react"
 
 export default function Merchant() {
-    
+
+  const session = useSession();
+  console.log(session.data.user.id)
+
   const router = useRouter();
 
   const [nama, setName] = useState("");
   const [email, setEmail] = useState("");
   const [kota, setKota] = useState("");
+  const [ownerid] = useState(session.data.user.id);
 
   const handler = async (e) => {
     e.preventDefault();
@@ -21,13 +25,14 @@ export default function Merchant() {
     let n = nama;
     let em = email;
     let k = kota;
+    let s = ownerid;
 
     console.log(nama,email,kota)
 
     const options = {
         method:"POST",
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({nama:n, email:em, kota:k})
+        body:JSON.stringify({nama:n, email:em, kota:k,ownerid:s})
     }
   
     await fetch('http://localhost:3000/api/auth/data-diri', options)

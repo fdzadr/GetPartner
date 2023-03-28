@@ -6,10 +6,26 @@ import styles from '@/styles/pageproduct.module.css';
 import Link from 'next/link';
 import Footer from '/components/footer';
 import Navbar from '/components/navbarresto';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+// import Product from 'components/product/product';
+import connectMongo from "database/conn"
+import { useSession } from 'next-auth/react';
+// import Product from 'model/Product'
+
+
 
 export default function Daftar() {
+    const [data, setData] = useState([]);
+
+    const session = useSession();
+
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/produk/produk-api", {
+            method: "GET"
+        }).then((res) => res.json()).then((data) => setData(data.data))
+    }, []);
 
 
   return (
@@ -23,38 +39,10 @@ export default function Daftar() {
 
       <Navbar/>
 
-    <div className={styles.setting_main}>
-        <div className={styles.etalase}>
             <div className={styles.namaeta}>
                 Makan Siang (3)
             </div>
-            <div className='setting_main'>
-                <div className={styles.line1}>
-                    <Image 
-                    src="/aset/pageproduk/fotomakan.svg" 
-                    alt="image"
-                    width={48}
-                    height={48}
-                    />
-                    <div className={styles.container}>
-                        Manisan Enak
-                        <div className={styles.small}>
-                            Makanan
-                            <br></br>
-                            Rp20.000
-                        </div>
-                    </div>
-                    <div className={styles.status}>
-                        <Image 
-                            src='/aset/pageproduk/aktif.svg' 
-                            alt="aktif"
-                            width={48} 
-                            height={18} 
-                        />
-                    </div>
-                </div>
-            </div>
-
+        {(data.length != 0) && data.map((item) => {if(item.ownerid == session.data.user.id) return  (
             <div className='setting_main'>
                 <div className={styles.line1}>
                     <Image 
@@ -64,11 +52,11 @@ export default function Daftar() {
                     height={48}
                     />
                     <div className={styles.container}>
-                        Manisan Enak
+                        {item.namaproduk}
                         <div className={styles.small}>
                             Makanan
                             <br></br>
-                            Rp20.000
+                            Rp{item.harga}
                         </div>
                     </div>
                     <div className={styles.status}>
@@ -81,34 +69,10 @@ export default function Daftar() {
                     </div>
                 </div>
             </div>
+        )})
+        }
 
-            <div className='setting_main'>
-                <div className={styles.line1}>
-                    <Image 
-                    src="/aset/pageproduk/fotomakan.svg" 
-                    alt="image"
-                    width={48}
-                    height={48}
-                    />
-                    <div className={styles.container}>
-                        Manisan Enak
-                        <div className={styles.small}>
-                            Makanan
-                            <br></br>
-                            Rp20.000
-                        </div>
-                    </div>
-                    <div className={styles.status}>
-                        <Image 
-                            src='/aset/pageproduk/aktif.svg' 
-                            alt="aktif"
-                            width={48} 
-                            height={18} 
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div className={styles.setting_main}>
         
         <div className={styles.etalase}>
             <div className={styles.namaeta}>
@@ -210,3 +174,4 @@ export default function Daftar() {
     </>
   )
 }
+

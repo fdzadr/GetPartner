@@ -2,9 +2,24 @@ import Image from 'next/image';
 import styles from '@/styles/components/navbarresto.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
+import { useState, useEffect } from 'react';
 
 export default function navbarresto() {
+
+    const [data, setData] = useState([]);
     const router = useRouter();
+
+    const session = useSession();
+
+    console.log(session.data.user.id)
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/auth/data-usaha", {
+            method: "GET"
+        }).then((res) => res.json()).then((data) => setData(data.data))
+        console.log(data)
+    }, []);
 
     function Back() {
     router.back();
@@ -32,14 +47,19 @@ export default function navbarresto() {
                     height={64}
                     />
                 </div>
-                <div className={styles.container}>
-                    Resto Makan Enak
-                    <div className={styles.small}>
-                        Jl. Dimana Saja
-                        <br></br>
-                        2.2km
+                {(data.length != 0) && data.map((item) => {if(item.ownerid == session.data.user.id) return (
+                    <div className='setting_main'>
+                        <div className={styles.line1}>
+                            <div className={styles.container}>
+                                {item.namaresto}
+                                <div className={styles.small}>
+                                    {item.alamat}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                )})
+                }
             </div>
         </>
     )
