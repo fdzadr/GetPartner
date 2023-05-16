@@ -8,7 +8,6 @@ import { compare } from 'bcryptjs';
 
 export default NextAuth({
     providers:[
-        // Google Provider
         CredentialProvider({
             name:"Credentials",
             async authorize(credentials,req){
