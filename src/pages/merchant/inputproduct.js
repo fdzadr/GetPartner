@@ -6,11 +6,20 @@ import styles from '@/styles/inputproduct.module.css';
 import Link from 'next/link';
 import Footer from '/components/footer';
 import Navbar from '/components/navbar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 
 export default function Daftar() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/auth/data-usaha", {
+        method: "GET"
+    }).then((res) => res.json()).then((data) => setData(data.data))
+    console.log(data)
+  }, []);
 
   const session = useSession();
   const router = useRouter();

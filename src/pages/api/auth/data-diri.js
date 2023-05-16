@@ -19,7 +19,7 @@ export default async function handler(req,res){
         const checkexisting = await Merchant.findOne({email});
         if(checkexisting) return res.status(422).json({status:false,message:"User already exist!"});
 
-        const merchant = await Merchant.create({nama, email, kota, ownerid}//, function(err, data){
+        const merchant = await Merchant.create({nama, email, kota,ownerid}//, function(err, data){
           // if(err)return res.status(404).json({err});
           // return res.status(201).json({status:true,user:data})  
         // }

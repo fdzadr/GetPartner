@@ -17,6 +17,10 @@ export default function Merchant() {
   const [nama, setName] = useState("");
   const [email, setEmail] = useState("");
   const [kota, setKota] = useState("");
+  const[phonenumber] = useState(session.data.user.phonenumber);
+  const[password] = useState(session.data.user.password);
+  const[cpassword] = useState(session.data.user.cpassword);
+  console.log(session)
   const [ownerid] = useState(session.data.user.id);
 
   const handler = async (e) => {
@@ -32,7 +36,7 @@ export default function Merchant() {
     const options = {
         method:"POST",
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({nama:n, email:em, kota:k,ownerid:s})
+        body:JSON.stringify({nama:n, email:em,kota:k,ownerid:s})
     }
   
     await fetch('http://localhost:3000/api/auth/data-diri', options)
