@@ -103,7 +103,7 @@ export default function Home() {
                 </div>
 
                 <div className="buttons">
-                    <Link href="merchant/homepage"><button onClick={(e) => handlerDriver(e)} className={styles.login_btn}>Masuk Sebagai Driver</button></Link>
+                    {<Link href="driver/homepage"><button /*onClick={(e) => handlerDriver(e)} */ className={styles.login_btn}>Masuk Sebagai Driver</button></Link>}
                 </div>
         
                 <div className={styles.regisask}>

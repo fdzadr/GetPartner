@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/styles/components/navbar.module.css';
+import styles from '@/styles/components/navback.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -14,6 +14,16 @@ export default function Navback() {
         <>
         <nav class='navbar sticky-top'>
             <div className={styles.navbar}>
+                <div className={styles.backtopleft}>
+                    <button onClick={Back} className={styles.btn}>
+                        <Image 
+                        src="/aset/header/backtopleft.svg" 
+                        alt="logo"
+                        width={33}
+                        height={33}
+                        />
+                    </button>
+                </div>
                 <div className={styles.logo_getjob}>
                     <Link href="/homepage">
                     <Image 

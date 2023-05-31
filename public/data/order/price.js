@@ -2,7 +2,7 @@ export const prices = [
     {
       id: 45678,
       pesanan: "Sate",
-      harga: 10000,  
+      harga: 25000,  
     },
     {
         id: 45678,

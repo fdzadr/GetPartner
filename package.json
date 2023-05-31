@@ -13,13 +13,16 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
     "formik": "^2.2.9",
+    "google-maps-react": "^2.0.6",
+    "leaflet": "^1.9.4",
     "mongodb": "^5.1.0",
     "next": "^13.2.1",
     "next-auth": "^4.20.1",
     "next-connect": "^0.13.0",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "mongoose": "^7.0.3"
