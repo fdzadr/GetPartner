@@ -1,47 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import MapContainer from '/components/driver home/map_current';
 import Navbar from '/components/navbar';
 import Footer from '/components/footer';
-import styles from '@/styles/driver/home.module.css';
-import { Modal } from 'react-bootstrap';
+import MapContainer from '/components/driver home/map_route';
+import styles from '@/styles/driver/order.module.css';
 import { checkout } from 'public/data/checkout';
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { Modal } from 'react-bootstrap';
 
-export default function Home() {
-  const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowModal(true);
-    }, 10000);
-  }, []);
+export default function OrderBerlangsung() {
+    const [showModal, setModal] = useState(false);
 
-  const handleModal = () => {
-    setShowModal(false);
-  };
+    const handleAccept = () => {
+      setModal(true);
+    };
 
-  return (
-    <>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles.map}>
-          <MapContainer />
+    const handleCloseModal = () => {
+        setModal(false);
+    };
+
+    const handleSelesai = () => {
+        setModal(false);
+        window.location.href = '/driver/order/order_selesai';
+    };
+
+    return (
+        <>
+        <Navbar/>
+
+        <div className={styles.status}>
+            <h5>Pesanan sedang berlangsung...</h5>
         </div>
 
-        <div className='my-3'>
-          <img src="/dummy_stats.svg" alt="Image 2" />
-        </div>
+        <div className={styles.container}>
 
-        <div className='mb-3'>
-          <img src="/dummy_hist.svg" alt="Image 2" />
-        </div>
+            <div className={styles.map}>
+                <MapContainer />
+            </div>
 
-        <Modal show={showModal} onHide={handleModal} aria-labelledby="contained-modal-title-vcenter" centered>
-          <Modal.Header closeButton>
-            <Modal.Title>Ada Orderan Baru Nih!</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
             <div className={styles.cont}>
                 <h4>Cristiantoro Messi</h4>
                 <div className={styles.ket}>
@@ -81,18 +78,35 @@ export default function Home() {
                         </div>
                 </div>
             </div>
-          </Modal.Body>
-          <Modal.Footer className={styles.footer}>
-            <Link href='/driver/order' className={styles.button}>
-              <button onClick={handleModal} className={styles.btn}>
-                Lihat Rincian
-              </button>
-            </Link>
-          </Modal.Footer>
-        </Modal>
-      </div>
 
-      <Footer />
-    </>
-  );
+            <div>
+                <button className={styles.btn} onClick={handleAccept}>
+                    Pesanan Selesai
+                </button>
+            </div>
+        </div>
+        
+        <Footer/>
+
+        <Modal show={showModal} centered>
+            <Modal.Header className={styles.modal_header}>
+                <Modal.Title>Pastikan semua proses telah selesai.</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <p>Jika terdapat proses yang belum selesai, driver akan dikenakan sanksi.</p>
+            </Modal.Body>
+
+            <Modal.Footer className={styles.modal_footer}>
+                <button onClick={handleCloseModal} className={styles.modal_btn_kembali}>
+                    Kembali
+                </button>
+                
+                <button onClick={handleSelesai} className={styles.modal_btn_selesai}>
+                    Selesai
+                </button>
+            </Modal.Footer>
+        </Modal>
+        </>
+    )
 }

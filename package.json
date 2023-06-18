@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.2.1",
+    "@react-google-maps/api": "^2.18.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
     "formik": "^2.2.9",

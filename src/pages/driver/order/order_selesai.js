@@ -1,47 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import MapContainer from '/components/driver home/map_current';
 import Navbar from '/components/navbar';
 import Footer from '/components/footer';
-import styles from '@/styles/driver/home.module.css';
-import { Modal } from 'react-bootstrap';
+import styles from '@/styles/driver/order.module.css';
 import { checkout } from 'public/data/checkout';
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 
-export default function Home() {
-  const [showModal, setShowModal] = useState(false);
+export default function OrderSelesai() {
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowModal(true);
-    }, 10000);
-  }, []);
+    const handleSelesai = () => {
+        window.location.href = '/driver/homepage';
+    };
 
-  const handleModal = () => {
-    setShowModal(false);
-  };
+    return (
+        <>
+        <Navbar/>
 
-  return (
-    <>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles.map}>
-          <MapContainer />
-        </div>
+        <div className={styles.container}>
 
-        <div className='my-3'>
-          <img src="/dummy_stats.svg" alt="Image 2" />
-        </div>
+            <div className={styles.jumbotron}>
+                <h2>Hore, Pesanan Sudah Selesai</h2>
+                <Image
+                    className='mb-5 mt-3'
+                    src="/aset/pesananselesai.svg" 
+                    alt="pesanan selesai"
+                    width={150}
+                    height={150}
+                />
+            </div>
 
-        <div className='mb-3'>
-          <img src="/dummy_hist.svg" alt="Image 2" />
-        </div>
-
-        <Modal show={showModal} onHide={handleModal} aria-labelledby="contained-modal-title-vcenter" centered>
-          <Modal.Header closeButton>
-            <Modal.Title>Ada Orderan Baru Nih!</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
             <div className={styles.cont}>
                 <h4>Cristiantoro Messi</h4>
                 <div className={styles.ket}>
@@ -81,18 +68,15 @@ export default function Home() {
                         </div>
                 </div>
             </div>
-          </Modal.Body>
-          <Modal.Footer className={styles.footer}>
-            <Link href='/driver/order' className={styles.button}>
-              <button onClick={handleModal} className={styles.btn}>
-                Lihat Rincian
-              </button>
-            </Link>
-          </Modal.Footer>
-        </Modal>
-      </div>
 
-      <Footer />
-    </>
-  );
+            <div>
+                <button className={styles.btn} onClick={handleSelesai}>
+                    Selesai
+                </button>
+            </div>
+        </div>
+
+        <Footer/>
+        </>
+    )
 }
